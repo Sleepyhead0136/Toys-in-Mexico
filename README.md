@@ -3,6 +3,7 @@ SUMX(
     sales,
     sales[Units] * RELATED(products[Profit])
 )
+
 Sales Drop % = 
 VAR InStock = [Sales When InStock]
 VAR OutStock = [Sales When OutOfStock]
@@ -19,6 +20,7 @@ CALCULATE(
         inventory[stock_on_hand] > 0
     )
 )
+
 Sales When OutOfStock = 
 CALCULATE(
     [Total Sales(pieces)],
@@ -27,6 +29,7 @@ CALCULATE(
         inventory[stock_on_hand] = 0
     )
 )
+
 Stock Profit (Filtered by Category) = 
 VAR SelectedCategory = SELECTEDVALUE(products[Product_Category])
 RETURN
@@ -44,6 +47,7 @@ IF(
         inventory[Stock_On_Hand] * RELATED(products[Profit])
     )
 )
+
 total profit = 
 SUM(products[Profit])
 
