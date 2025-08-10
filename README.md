@@ -12,6 +12,8 @@ IF(
     InStock > 0,
     DIVIDE(OutStock, InStock, 0),
     BLANK()
+
+
 Sales When InStock = 
 CALCULATE(
     [Total Sales(pieces)],
