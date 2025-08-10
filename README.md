@@ -66,3 +66,13 @@ CALCULATE(
         RELATED(products[Product_Category]) = idCategory
     )
 )
+
+Seasons = 
+SWITCH(
+   TRUE(),
+    MONTH('calendar'[Date]) in {12,1,2}, "winter",
+    MONTH('calendar'[Date]) in {3,4,5}, "spring",
+    MONTH('calendar'[Date]) in {6,7,8}, "summer",
+    MONTH('calendar'[Date]) in {9,10,11},"autumn",
+    "other"
+)
